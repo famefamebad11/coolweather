@@ -1,6 +1,7 @@
 package com.coolweather.activity;
 
 import com.coolweather.app.R;
+import com.coolweather.service.AutoUpdateService;
 import com.coolweather.util.HttpCallbackListener;
 import com.coolweather.util.HttpUtil;
 import com.coolweather.util.Utility;
@@ -166,6 +167,8 @@ public class WeatherActivity extends Activity implements android.view.View.OnCli
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
 		// Toast.makeText(this, "读取成功", Toast.LENGTH_LONG).show();
+		Intent intent = new Intent(this, AutoUpdateService.class);
+		startService(intent);
 	}
 
 	@Override
